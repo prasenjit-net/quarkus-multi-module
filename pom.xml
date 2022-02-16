@@ -13,6 +13,7 @@
         <module>models</module>
         <module>api</module>
         <module>common</module>
+        <module>client</module>
     </modules>
 
     <properties>
@@ -41,6 +42,11 @@
             <dependency>
                 <groupId>net.prasenjit.poc</groupId>
                 <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.prasenjit.poc</groupId>
+                <artifactId>client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
