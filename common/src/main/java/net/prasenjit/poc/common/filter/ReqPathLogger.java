@@ -2,13 +2,21 @@ package net.prasenjit.poc.common.filter;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.container.ContainerResponseContext;
+import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
-import java.io.IOException;
+
 
 @Provider
-public class ReqPathLogger implements ContainerRequestFilter {
+public class ReqPathLogger implements ContainerRequestFilter, ContainerResponseFilter {
+
     @Override
-    public void filter(ContainerRequestContext requestContext) throws IOException {
-        System.out.println("Request Path: " + requestContext.getUriInfo().getPath());
+    public void filter(ContainerRequestContext containerRequestContext) {
+        System.out.println("Request path: " + containerRequestContext.getUriInfo().getPath());
+    }
+
+    @Override
+    public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) {
+        System.out.println("Response status: " + responseContext.getStatus());
     }
 }

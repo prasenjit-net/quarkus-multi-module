@@ -1,5 +1,6 @@
 package net.prasenjit.poc;
 
+import io.smallrye.mutiny.Uni;
 import net.prasenjit.poc.common.service.MessageService;
 
 import javax.inject.Inject;
@@ -16,7 +17,7 @@ public class ExampleResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
+    public Uni<String> hello() {
         return messageService.getMessage();
     }
 }
