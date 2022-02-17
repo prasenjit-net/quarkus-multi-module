@@ -7,6 +7,6 @@ import javax.inject.Singleton;
 @Singleton
 public class MessageService {
     public Uni<String> getMessage() {
-        return Uni.createFrom().item("Hello World");
+        return Uni.createFrom().item("Hello World!");
     }
 }

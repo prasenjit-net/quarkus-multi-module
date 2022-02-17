@@ -17,6 +17,7 @@ public class ReqPathLogger implements ContainerRequestFilter, ContainerResponseF
 
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) {
+        responseContext.getHeaders().putSingle("Custom-Header", "Custom-Header-Value");
         System.out.println("Response status: " + responseContext.getStatus());
     }
 }
